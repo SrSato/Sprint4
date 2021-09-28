@@ -40,12 +40,12 @@ node server.js
 
 Nowadays this API has the following end points:
 
-- POST '/players' :arrowright: Sign up for new players 
-- PUT '/players' :arrowright: Update player's NAME
-- POST '/players/:id/games' :arrowright: Rolling the Dice!
-- DELETE '/players/:id/games' :arrowright: Delete all player's games
-- GET '/players' :arrowright: List of players
-- GET '/players/:id/games' :arrowright: List of Player's Games
-- GET '/players/ranking' :arrowright: Players Average Success
-- GET '/players/ranking/winner' :arrowright: Best Player
-- GET '/players/ranking/loser' :arrowright: Worst Player
+- POST '/players' :arrow_right: Sign up for new players 
+- PUT '/players' :arrow_right: Update player's NAME
+- POST '/players/:id/games' :arrow_right: Rolling the Dice!
+- DELETE '/players/:id/games' :arrow_right: Delete all player's games
+- GET '/players' :arrow_right: List of players
+- GET '/players/:id/games' :arrow_right: List of Player's Games
+- GET '/players/ranking' :arrow_right: Players Average Success
+- GET '/players/ranking/winner' :arrow_right: Best Player
+- GET '/players/ranking/loser' :arrow_right: Worst Player
