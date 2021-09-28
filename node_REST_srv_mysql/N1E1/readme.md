@@ -22,7 +22,7 @@ npm -i
 dbConfig = {
   HOST: "XXXXXXX",
   PORT: "XXXX",
-  USER: "XXXXX,
+  USER: "XXXXX",
   PASSWORD: "XXXXX",
   DB: "XXXX",
   dialect: "XXXX",
@@ -39,4 +39,13 @@ node server.js
 ## Using the API (End Points)
 
 Nowadays this API has the following end points:
-- 
+
+- POST '/players' :arrowright: Sign up for new players 
+- PUT '/players' :arrowright: Update player's NAME
+- POST '/players/:id/games' :arrowright: Rolling the Dice!
+- DELETE '/players/:id/games' :arrowright: Delete all player's games
+- GET '/players' :arrowright: List of players
+- GET '/players/:id/games' :arrowright: List of Player's Games
+- GET '/players/ranking' :arrowright: Players Average Success
+- GET '/players/ranking/winner' :arrowright: Best Player
+- GET '/players/ranking/loser' :arrowright: Worst Player
