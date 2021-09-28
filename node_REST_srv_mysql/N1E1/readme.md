@@ -13,7 +13,7 @@ You need the following software installed and configured in order to use this se
 - [x] Clone or download this repo into your chosen folder.
 - [x] In that folder (A.K.A "Main Folder" for now on), go CLI and run:
 ```
-npm -i
+npm install
 ```
 - [x] Make a subfolder named **config**.
 - [x] Make a file named **db.config.js** in that subfolder.
