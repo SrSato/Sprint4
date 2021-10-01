@@ -13,7 +13,7 @@ You need the following software installed and configured in order to use this se
 - [x] Clone or download this repo into your chosen folder.
 - [x] In that folder (A.K.A "Main Folder" for now on), go CLI and run:
 ```
-npm -i
+npm install
 ```
 - [x] Make a subfolder named **config**.
 - [x] Make a file named **db.config.js** in that subfolder.
@@ -40,12 +40,12 @@ node server.js
 
 Nowadays this API has the following end points:
 
-- POST '/players' :arrowright: Sign up for new players 
-- PUT '/players' :arrowright: Update player's NAME
-- POST '/players/:id/games' :arrowright: Rolling the Dice!
-- DELETE '/players/:id/games' :arrowright: Delete all player's games
-- GET '/players' :arrowright: List of players
-- GET '/players/:id/games' :arrowright: List of Player's Games
-- GET '/players/ranking' :arrowright: Players Average Success
-- GET '/players/ranking/winner' :arrowright: Best Player
-- GET '/players/ranking/loser' :arrowright: Worst Player
+- POST '/players' :arrow_right: Sign up for new players 
+- PUT '/players' :arrow_right: Update player's NAME
+- POST '/players/:id/games' :arrow_right: Rolling the Dice!
+- DELETE '/players/:id/games' :arrow_right: Delete all player's games
+- GET '/players' :arrow_right: List of players
+- GET '/players/:id/games' :arrow_right: List of Player's Games
+- GET '/players/ranking' :arrow_right: Players Average Success
+- GET '/players/ranking/winner' :arrow_right: Best Player
+- GET '/players/ranking/loser' :arrow_right: Worst Player
