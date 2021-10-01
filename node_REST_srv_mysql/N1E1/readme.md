@@ -49,3 +49,9 @@ Nowadays this API has the following end points:
 - GET '/players/ranking' :arrow_right: Players Average Success
 - GET '/players/ranking/winner' :arrow_right: Best Player
 - GET '/players/ranking/loser' :arrow_right: Worst Player
+
+You can observe the API at work with this postman collection:
+
+```
+/Sprint4/node_REST_srv_mysql/N1E1/sprint4-n1e1.postman_collection.json
+```
