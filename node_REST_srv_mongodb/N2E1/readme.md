@@ -22,10 +22,7 @@ npm install
 dbConfig = {
   HOST: "XXXXXXX",
   PORT: "XXXX",
-  USER: "XXXXX",
-  PASSWORD: "XXXXX",
-  DB: "XXXX",
-  dialect: "XXXX",
+  DB: "XXXX"
 };
 
 module.exports=dbConfig;
