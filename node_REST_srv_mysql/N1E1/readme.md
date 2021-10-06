@@ -15,9 +15,9 @@ You need the following software installed and configured in order to use this se
 ```
 npm install
 ```
-- [x] Make a subfolder named **config**.
-- [x] Make a file named **db.config.js** in that subfolder.
-- [x] Write this in that file, but change XXXX for your appropriate values: 
+- [x] Go to **config** folder.
+- [x] Open a file named **db.config.js** in that subfolder.
+- [x] Change XXXX for your appropriate values: 
 ```javascript 
 dbConfig = {
   HOST: "XXXXXXX",

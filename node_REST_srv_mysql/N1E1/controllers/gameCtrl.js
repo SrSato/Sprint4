@@ -16,15 +16,16 @@ async function nameInUse(name){
 async function signUp (req, res) {
   try{
 
-    const nameToSearch= req.body.name || ""; 
+    let nameToSearch= req.body.name || ""; 
 
     if (await nameInUse(nameToSearch)==false){
+      nameToSearch="Anonymus";
       const player = Player.build({
-        name: req.body.name,
+        name: nameToSearch
       })
    
-      player.save()
-      return res.status(200).send({ success: true, result: `A user named ${nameToSearch||"Anonymus"} has been created.`});
+      player.save();
+      return res.status(200).send({ success: true, result: `A user named ${nameToSearch} with id: ${player.id} has been created.`});
       
     }else{
       return res.status(400).send({ success: false, message: `You need a new nick! A user named ${nameToSearch} is already in the DB!` });
@@ -42,25 +43,25 @@ async function signUp (req, res) {
 async function renamePlayer(req,res){
   try{
 
-    const nameToSearch= req.body.oldName || "";
+    const idToSearch= req.body.id || "";
     const newName=req.body.newName;
 
-    if(nameToSearch==undefined||nameToSearch==""){
-      return res.status(400).send({ success: false, message: `The current user name must be informed` });
+    if(idToSearch==undefined||idToSearch==""){
+      return res.status(400).send({ success: false, message: `The current user id must be informed` });
     }
-    if (!await nameInUse(nameToSearch)){
-      return res.status(400).send({ success: false, message: `There isn't a user named ${nameToSearch} in the DB!` });
+    if (!await Player.findByPk(idToSearch)){
+      return res.status(400).send({ success: false, message: `There isn't a user with id ${idToSearch} in the DB!` });
     }
     if(newName==undefined||newName==""){
       return res.status(400).send({ success: false, message: `The new user name must be informed` });
     }
     if (await nameInUse(newName)){
-      return res.status(400).send({ success: false, message: `You need a new nick! A user named ${nameToSearch} is already in the DB!` });
+      return res.status(400).send({ success: false, message: `You need a new nick! A user named ${newName} is already in the DB!` });
     }
 
-    player=await Player.findOne({ where: { name: nameToSearch } });
+    player=await Player.findByPk(idToSearch);
     player.update({name: newName});
-    return res.status(200).send({ success: true, message: `The user known as ${nameToSearch} now is ${newName}`})
+    return res.status(200).send({ success: true, message: `The user name is now ${newName}`})
 
   }
   catch(err){
@@ -160,7 +161,7 @@ async function readAllGames(req,res){
 async function readAllPlayers(req,res){
   try {
 
-    let players = await Player.findAll({attributes: ['name', 'average']});
+    let players = await Player.findAll({attributes: ['id','name', 'average']});
     res.status(200).send({ success: true, result: players })
 
   }
@@ -175,7 +176,7 @@ async function readAllPlayers(req,res){
 async function rankingAllPlayers(req,res){
   try {
 
-    let players = await Player.findAll({attributes: ['name', 'average'],order: [
+    let players = await Player.findAll({attributes: ['id','name', 'average'],order: [
         ['average','DESC']
       ]});
     res.status(200).send({ success: true, result: players })
