@@ -7,9 +7,6 @@ temp/
 # ignore ALL files in node_modules directory
 node_modules
 
-# ignore ALL files in config directory
-config
-
 # ignore package-lock.json
 package-lock.json
 
